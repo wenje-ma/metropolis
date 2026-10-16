@@ -31,6 +31,37 @@ format:
         \usefonttheme{professionalfonts}
         \usepackage{unicode-math}
         \setmathfont{Latin Modern Math}
+        \makeatletter
+        \renewcommand{\metropolis@block}[1]{%
+          \par\vskip\medskipamount%
+          \setlength{\parskip}{0pt}%
+          \ifbeamercolorempty[bg]{block title#1}{%
+            \begin{beamercolorbox}[rightskip=0pt plus 4em]{block title#1}}{%
+            \ifbeamercolorempty[bg]{block title}{%
+              \begin{beamercolorbox}[rightskip=0pt plus 4em]{block title#1}%
+            }{%
+              \begin{beamercolorbox}[
+                sep=\dimexpr\metropolis@blocksep-\metropolis@blockadjust\relax,
+                leftskip=\metropolis@blockadjust,
+                rightskip=\dimexpr\metropolis@blockadjust plus 4em\relax
+              ]{block title#1}%
+            }}%
+          \usebeamerfont*{block title#1}%
+          \metropolis@strut\insertblocktitle\metropolis@strut%
+          \end{beamercolorbox}%
+          \nointerlineskip\vskip 1.5ex%
+          \ifbeamercolorempty[bg]{block body#1}{%
+            \begin{beamercolorbox}[vmode]{block body#1}}{%
+            \ifbeamercolorempty[bg]{block body}{%
+              \begin{beamercolorbox}[vmode]{block body#1}%
+            }{%
+              \begin{beamercolorbox}[sep=\metropolis@blocksep, vmode]{block body#1}%
+              \vspace{-\metropolis@parskip}%
+            }}%
+          \usebeamerfont{block body#1}%
+          \setlength{\parskip}{\metropolis@parskip}%
+        }
+        \makeatother
 ---
 
 ## Table of contents
@@ -365,7 +396,9 @@ The theme *itself* is licensed under a
 \begin{center}\ccbysa\end{center}
 :::
 
-## Questions? {.standout}
+## {.standout}
+
+Questions?
 
 ## Backup slides
 
