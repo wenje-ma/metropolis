@@ -213,8 +213,8 @@ The theme provides sensible defaults to *emphasize* text,
 ## Animation
 
 ::: {=latex}
-\begin{itemize}[<+- | alert@+>]
-  \item \alert<4>{This is\only<4>{ really} important}
+\begin{itemize}[< +- | alert@+> ]
+  \item \alert< 4> {This is\only< 4> { really} important}
   \item Now this
   \item And now this
 \end{itemize}
