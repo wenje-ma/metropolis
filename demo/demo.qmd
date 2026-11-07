@@ -97,7 +97,7 @@ Sections group slides of the same topic
 \section{Elements}
 ```
 
-for which `\themename`{=latex} provides a nice progress indicator …
+for which `\themename`{=latex} provides a nice progress indicator...
 
 # Title formats
 
